@@ -1,0 +1,17 @@
+# Client output data
+output/*/
+!output/.gitkeep
+
+# Saved voice profiles (email-automation only)
+config/voices/*/
+!config/voices/.gitkeep
+
+# Member config (personal/private)
+config/member-profile.md
+config/lead-criteria.md
+
+# Secrets
+.env
+
+# System files
+.DS_Store

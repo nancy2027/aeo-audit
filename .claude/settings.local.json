@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:*)",
+      "Write",
+      "Edit",
+      "Bash(echo:*)",
+      "Bash(ls:*)",
+      "Bash(test:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(curl:*)",
+      "Bash(zip:*)",
+      "Bash(head:*)",
+      "Bash(wc:*)",
+      "Bash(whois:*)",
+      "Bash(cat:*)",
+      "Bash(python3:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(tail:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(tee:*)",
+      "Bash(printf:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+  ],
+  "enableAllProjectMcpServers": true
+}
