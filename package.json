@@ -5,9 +5,9 @@
   "type": "module",
   "description": "AEO/SEO audit workflow with a free Node CLI plus the original Claude Code rig.",
   "scripts": {
-    "audit": "node tools/aeo-audit.mjs",
-    "test": "node --test tests/aeo-audit.test.mjs"
-  },
+  "audit": "node aeo-audit.mjs",
+  "test": "node --test aeo-audit.test.mjs"
+},
   "engines": {
     "node": ">=20"
   },
