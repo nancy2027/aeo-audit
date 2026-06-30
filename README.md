@@ -1,5 +1,107 @@
 # AEO & SEO Audit
 
+This repo now has **two ways to run an audit**:
+
+1. **Free Node/Codex CLI** -- works with plain Node.js. No Claude Code, OpenCode, or paid AI subscription required. Good for first-pass prospecting, AEO snapshots, and cold-email lead magnets.
+2. **Original Claude Code rig** -- the upstream multi-agent workflow under `.claude/`. Use this if you have Claude Code installed and want the full agent pipeline.
+
+The MIT license from the original project is preserved.
+
+## Quick Start: Free Node/Codex CLI
+
+### Requirements
+
+- Node.js 20+.
+
+No npm packages are required. The CLI uses built-in Node APIs.
+
+### Install / Test
+
+```bash
+npm test
+```
+
+### Run a Light Audit
+
+```bash
+npm run audit -- \
+  --url https://example.com \
+  --out output/aeo/example \
+  --customer-type "Shopify brand" \
+  --service-offer "AEO audit, sourcing, QC, packaging, warehousing, and US fulfillment" \
+  --sender-name "JST Fulfill"
+```
+
+On Windows PowerShell:
+
+```powershell
+npm run audit -- --url https://example.com --out output\aeo\example --customer-type "Shopify brand" --service-offer "AEO audit, sourcing, QC, packaging, warehousing, and US fulfillment" --sender-name "JST Fulfill"
+```
+
+### What the Node CLI Does
+
+The free CLI is a practical MVP inspired by the original rig. It:
+
+- crawls the target URL plus common pages such as `/about`, `/faq`, `/shipping`, `/returns`, `/contact`, and `/blog`
+- extracts title, H1, meta description, FAQ signals, shipping/returns signals, trust signals, product/service signals, structured data, and internal links
+- scores the site across brand clarity, AEO readability, trust/conversion information, technical structure, and content depth
+- creates an AEO snapshot
+- creates a cold outreach email with subject-line options
+- writes a rig-like output folder that can be used for prospecting
+
+### Output
+
+Light mode output lands in:
+
+```text
+output/aeo/<client-slug>/
+  README.md
+  plan.md
+  raw-scrape.json
+  research/
+    site-crawl.md
+    tool-data.md
+    competitor-analysis.md
+    aeo-analysis.md
+  strategy/
+    audit-framework.md
+  sales/
+    aeo-snapshot.md
+    cold-email.md
+```
+
+### Full Mode Placeholder
+
+The Node CLI also accepts `--mode full`:
+
+```bash
+npm run audit -- --url https://example.com --mode full --out output/aeo/example-full
+```
+
+This creates additional `report/`, `design/`, and `deliverables/` files from the same rule-based audit model. It is useful for a quick local draft, but the original Claude Code rig is still better for deep 25-35 page reports.
+
+### Current Limitations of the Node CLI
+
+The free Node CLI is intentionally lightweight. It does **not** yet run the full 10/11-agent autonomous pipeline. It also does not yet call Google PageSpeed, W3C, Wayback, WHOIS, or live search APIs. Those are good next upgrades.
+
+Use it for:
+
+- quick AEO lead magnets
+- first-pass prospecting
+- cold-email personalization
+- testing the sales workflow without paid tools
+
+Use the original Claude Code rig for:
+
+- deeper multi-agent analysis
+- full branded reports
+- quality-gated deliverables
+- a more faithful version of the upstream workflow
+
+---
+
+## Original Claude Code Rig
+
 A Claude Code rig that generates AEO (Answer Engine Optimization) and SEO audit reports for businesses. Runs in two modes: **light mode** (AEO snapshot + cold email for prospecting) and **full mode** (complete 25-35 page branded report with executive summary, cover letter, and follow-up emails). Give it a URL -- it crawls the site, calls free APIs for real metrics, analyzes AI search readiness, compares competitors, and produces the selected deliverable package.
 
 **AEO is the lead, not a section.** Most SEO agencies still don't assess how businesses show up in AI search engines like ChatGPT, Perplexity, and Google AI Overviews. This audit does. The AEO assessment is what makes your outreach stand out.

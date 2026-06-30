@@ -1,0 +1,15 @@
+{
+  "name": "aeo-audit",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "AEO/SEO audit workflow with a free Node CLI plus the original Claude Code rig.",
+  "scripts": {
+    "audit": "node tools/aeo-audit.mjs",
+    "test": "node --test tests/aeo-audit.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
